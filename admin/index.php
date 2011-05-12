@@ -19,7 +19,7 @@ require ROOT . '/lib/utils.php';
         <ul>
             <li><a href="/admin/?action=add">dodaj wpis</a></li>
         </ul>
-        <div id="main">
+        <div id="main" class="dowolna zmiana">
 
 <?php
 
