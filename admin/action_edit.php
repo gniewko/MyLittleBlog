@@ -1,5 +1,7 @@
 <?php
 
+require ("lib/config.php");
+
 if (!isset ($_REQUEST['slug'])) {
     $_SESSION['msg'] = 'Brak identyfikatora wpisu';
     header ('Location: /admin/');

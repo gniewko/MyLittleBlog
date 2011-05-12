@@ -1,5 +1,7 @@
 <?php
 
+require ("lib/config.php");
+
 $subject = '';
 $content = '';
 $errors  = array ();
