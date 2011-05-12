@@ -24,7 +24,7 @@ require ROOT . '/lib/utils.php';
 
 if (isset ($_SESSION['msg'])) {
     echo "<ul>";
-    if (isarray ($_SESSION['msg'])) {
+    if (is_array ($_SESSION['msg'])) {
         foreach ($_SESSION['msg'] as $value) {
             echo "<li>".$value."</li>\n";
         }
