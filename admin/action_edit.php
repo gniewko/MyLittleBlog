@@ -3,7 +3,7 @@
 require ("lib/config.php");
 
 if (!isset ($_REQUEST['slug'])) {
-    $_SESSION['msg'] = 'Brak identyfikatora wpisu';
+    $_SESSION['msg'] = 'Brak identyfikatora wpisu!';
     header ('Location: /admin/');
     exit;
 }
@@ -19,7 +19,7 @@ else {
 }
 
 if (!$entry) {
-    $_SESSION['msg'] = 'Nie znaleziono wpisu o identyfikatorze "'. html ($_REQUEST['slug']) .'"';
+    $_SESSION['msg'] = 'Nie znaleziono wpisu o identyfikatorze "'. html ($_REQUEST['slug']) .'"!';
     header ('Location: /admin/');
     exit;
 }
@@ -38,20 +38,21 @@ if (isset ($_POST['content'])) {
 
 if (isset ($_POST['save'])) {
     if (strlen ($subject) < TITLE_LENGTH) {
-        $errors[] = 'Temat nie może być krótszy niż 3 znaki';
+        $errors[] = 'Temat nie może być krótszy niż 3 znaki!';
     }
+
     if (strlen ($content) < BODY_LENGTH) {
-        $errors[] = 'Treść nie może być krótsza niż 10 znaków';
+        $errors[] = 'Treść nie może być krótsza niż 10 znaków!';
     }
 
     if (!count ($errors)) {
         if (entry_edit ($_REQUEST['slug'], $subject, $content)) {
-            $_SESSION['msg'] = 'Post zapisany poprawnie';
+            $_SESSION['msg'] = 'Post zapisany poprawnie!';
             header ('Location: /admin/');
             exit;
         }
         else {
-            $errors[] = 'Nie udało się zapisać wpisu';
+            $errors[] = 'Nie udało się zapisać wpisu!';
         }
     }
 }

@@ -16,20 +16,20 @@ if (isset ($_POST['content'])) {
 
 if (isset ($_POST['save'])) {
     if (strlen ($subject) < TITLE_LENGTH) {
-        $errors[] = 'Temat nie może być krótszy niż 3 znaki';
+        $errors[] = 'Temat nie może być krótszy niż 3 znaki!';
     }
     if (strlen ($content) < BODY_LENGTH) {
-        $errors[] = 'Treść nie może być krótsza niż 10 znaków';
+        $errors[] = 'Treść nie może być krótsza niż 10 znaków!';
     }
 
     if (!count ($errors)) {
         if (entry_add ($subject, $content)) {
-            $_SESSION['msg'] = 'Post zapisany poprawnie';
+            $_SESSION['msg'] = 'Post zapisany poprawnie!';
             header ('Location: /admin/');
             exit;
         }
         else {
-            $errors[] = 'Nie udało się zapisać wpisu';
+            $errors[] = 'Nie udało się zapisać wpisu!';
         }
     }
 }
