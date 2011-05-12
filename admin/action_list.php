@@ -14,7 +14,6 @@
 $entries = entry_list (null, 'date_add');
 $i = 0;
 
-// Sprawdzamy czy istnieja jakies wpisy
 if (is_array ($entries) && count ($entries)) {
     foreach ($entries as $entry) {
         printf ("
