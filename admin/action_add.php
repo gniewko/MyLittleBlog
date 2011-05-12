@@ -13,7 +13,7 @@ if (isset ($_POST['content'])) {
 }
 
 if (isset ($_POST['save'])) {
-    if (strlen ($subject) < 3) {
+    if (strlen ($subject) < ACTION_SUBJECT_LENGTH) {
         $errors[] = 'Temat nie może być krótszy niż 3 znaki';
     }
     if (strlen ($content) < 10) {
