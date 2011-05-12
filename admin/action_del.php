@@ -13,7 +13,6 @@ if (!file_exists ($path)) {
     exit;
 }
 
-# todo: uzyc action_del()
 action_del ($path);
 $_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
 
