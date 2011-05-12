@@ -13,7 +13,7 @@ if (!file_exists ($path)) {
     exit;
 }
 
-if (entry_del ($path)) {
+if (entry_del ($_GET['slug'])) {
     $_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
 }
 else {
@@ -22,4 +22,3 @@ else {
 
 header ('Location: /admin/');
 exit;
-
