@@ -1,5 +1,4 @@
 <?php
 
-define ('TITLE_LENGTH', 0);
-define ('BODY_LENGTH', 0);
-
+define ('TITLE_LENGTH', 3);
+define ('BODY_LENGTH', 10);
