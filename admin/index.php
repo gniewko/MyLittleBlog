@@ -23,7 +23,16 @@ require ROOT . '/lib/utils.php';
 <?php
 
 if (isset ($_SESSION['msg'])) {
-    echo '<div>'. $_SESSION['msg'] ."</div>\n";
+    echo "<ul>";
+    if (isarray ($_SESSION['msg'])) {
+        foreach ($_SESSION['msg'] as $value) {
+            echo "<li>".$value."</li>\n";
+        }
+    }
+    else {
+        echo "<li>". $_SESSION['msg'] ."</li>\n";
+    }
+    echo "</ul>\n";
     unset ($_SESSION['msg']);
 }
 
