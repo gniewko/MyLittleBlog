@@ -13,7 +13,8 @@ if (!file_exists ($path)) {
     exit;
 }
 
-@unlink ($path);
+# todo: uzyc action_del()
+action_del ($path);
 $_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
 
 header ('Location: /admin/');
