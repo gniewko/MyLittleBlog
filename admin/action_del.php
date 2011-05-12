@@ -13,7 +13,6 @@ if (!file_exists ($path)) {
     exit;
 }
 
-action_del ($path);
 if (entry_del ($path)) {
     $_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
 }
