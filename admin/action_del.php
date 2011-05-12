@@ -13,10 +13,12 @@ if (!file_exists ($path)) {
     exit;
 }
 
-# todo: uzyc action_del()
-@unlink ($path);
-$_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
+if (entry_del ($_GET['slug'])) {
+    $_SESSION['msg'] = 'Wpis o identyfikatorze "'. html ($_GET['slug']) .'" został usunięty';
+}
+else {
+    $_SESSION['msg'] = 'Nieudana próba usunięcia wpisu o identyfikatorze '. html ($_GET['slug']);
+}
 
 header ('Location: /admin/');
 exit;
-

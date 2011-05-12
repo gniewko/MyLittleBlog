@@ -56,7 +56,7 @@ function entry_read ($slug) {
 
 function entry_del ($slug) {
     $path = slug_to_path ($slug);
-    return unlink ($path);
+    return @unlink ($path);
 }
 
 function entries_sorter ($field) {
@@ -104,4 +104,3 @@ function entry_list ($mask=null, $sort_by='slug') {
 function html ($string) {
     return htmlspecialchars ($string, ENT_QUOTES, 'UTF-8');
 }
-
